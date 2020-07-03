@@ -15,8 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/','ChatsController@index');
+/*Route::get('/','ChatsController@index');
 Route::get('messages', 'ChatsController@fetchMessages');
-Route::post('messages', 'ChatsController@sendMessages');
-//Route::get('/home', 'HomeController@index')->name('home');
-
+Route::post('messages', 'ChatsController@sendMessages');*/
+Route::get('/{any}', 'HomeController@index')->where('any', '.*');
+//admin
+Route::prefix('admin')->group(function (){
+    dd(23);
+});

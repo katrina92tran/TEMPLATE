@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\MessageSent;
-use App\Model\Message;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;

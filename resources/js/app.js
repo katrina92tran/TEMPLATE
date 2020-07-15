@@ -7,14 +7,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-import VueCarousel from 'vue-carousel'
-import  router from './router'
 
-//Vue.use(VueRouter)
-Vue.use(VueCarousel)
-
-import App from './views/App'
-//import Welcome from './views/Welcome'
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -26,18 +19,7 @@ import App from './views/App'
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-// Vue.component('chat-messages', require('./components/ChatMessages.vue').default);
-// Vue.component('chat-form', require('./components/ChatForm.vue').default);
-// const router = new VueRouter({
-//     mode: 'history',
-//     routes: [
-//         {
-//             path: '/',
-//             name: 'home',
-//             component: Welcome
-//         }
-//     ]
-// })
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -47,37 +29,4 @@ import App from './views/App'
 
 const app = new Vue({
     el: '#app',
-    components: {App},
-    router
-})
-/*const app = new Vue({
-    el: '#app',
-
-    data: {
-        messages : []
-    },
-    created() {
-        this.fetchMessages();
-        Echo.private('chat')
-            .listen('MessageSent', (e) => {
-                this.messages.push({
-                    message: e.message.message,
-                    user: e.user
-                })
-            });
-    },
-    methods: {
-        fetchMessages() {
-            axios.get('/messages').then(response => {
-                this.messages = response.data
-            });
-        },
-        addMessage(message) {
-            this.messages.push(message);
-
-            axios.post('/messages', message).then(response => {
-                console.log(response.data)
-            })
-        }
-    }
-});*/
+});
